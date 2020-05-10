@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Welcome {{user_info.name}}</h1>
+    <form action="http://localhost:5000/user/application" method="get">
+      <button type="submit" name="button">Application</button>
+    </form>
+    <form action="http://localhost:5000/user/account" method="get">
+      <button type="submit" name="button">Account</button>
+    </form>
+    <form action="http://localhost:5000/user/login_history" method="get">
+      <button type="submit" name="button">Login History</button>
+    </form>
+    <form action="http://localhost:5000/user/info" method="get">
+      <button type="submit" name="button">Personal Information Update</button>
+    </form>
+    <form action="/user/logout" method="get">
+      <button type="submit" name="button">Log out</button>
+    </form>
+  </body>
+</html>

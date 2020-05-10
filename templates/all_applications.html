@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome Administrator {{ user_name }}</h1>
+    <h2>Below are all customer applications:</h2>
+    <table>
+      <tr>
+        <td>User Name</td>
+        <td>Account Number</td>
+        <td>Account Type</td>
+        <td>Apply Date</td>
+        <td>Approve Date</td>
+        <td>deactive date</td>
+      </tr>
+      {% for a in applications %}
+      <tr>
+        <td>{{ a['user_name'] }}</td>
+        <td>{{ a['account_num'] }}</td>
+        <td>{{ a['type'] }}</td>
+        <td>{{ a['apply_date'] }}</td>
+        <td>{{ a['approve_date'] }}</td>
+        <td>{{ a['deactive_date'] }}</td>
+      </tr>
+      {% endfor %}
+    </table><hr>
+    <h2>Approve The Application</h2>
+    <form action="http://localhost:5000/admin/active" method="post">
+      Account Number:<input type="text" name="account_num" placeholder="Please type Integer">
+      <input type="submit" value="submit">
+    </form><hr>
+    <h2>Deactive The Account</h2>
+    <form action="http://localhost:5000/admin/deactive" method="post">
+      Account Number:<input type="text" name="account_num" placeholder="Please type Integer">
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>

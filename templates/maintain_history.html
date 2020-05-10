@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome Administrator {{ user_name }}</h1>
+    <h2>Below is your maintainance log</h2>
+    <table>
+      <tr>
+        <td>Admin ID</td>
+        <td>Time</td>
+        <td>Action</td>
+      </tr>
+      {% for h in history %}
+      <tr>
+        <td>{{ h.admin_id }}</td>
+        <td>{{ h.time }}</td>
+        <td>{{ h.action }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

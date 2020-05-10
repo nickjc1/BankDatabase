@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome {{user_name}}</h1>
+    <h3>Below is your Application History:</h3>
+    <table>
+      <tr>
+        <td>Account Number</td>
+        <td>Account Type</td>
+        <td>Apply Date</td>
+        <td>Approve Date</td>
+        <td>Deactive Date</td>
+      </tr>
+      {% for h in history %}
+      <tr>
+        <td>{{ h['account_num'] }}</td>
+        <td>{{ h['type'] }}</td>
+        <td>{{ h['apply_date'] }}</td>
+        <td>{{ h['approve_date'] }}</td>
+        <td>{{ h['deactive_date'] }}</td>
+      </tr>
+      <br>
+      {% endfor %}
+    </table>
+    <br>
+    <hr>
+    <h3>Create new Application:</h3>
+    <p>Please select the type of the account that you want to create:</p>
+    <form action="http://localhost:5000/user/application" method="post">
+      <select name="type">
+        <option value="saving">Saving</option>
+        <option value="credit">Credit</option>
+      </select>
+      <input type="submit" value="submit">
+    </form>
+
+  </body>
+</html>

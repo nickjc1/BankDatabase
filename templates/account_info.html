@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome {{username}}</h1>
+    <h3>Below is your Account details:</h3>
+    <table>
+      <tr>
+        <td>Account Number</td>
+        <td>Card Number</td>
+        <td>Account Type</td>
+        <td>Balance</td>
+        <td>Transaction</td>
+      </tr>
+      {% for a in accounts_info %}
+      <tr>
+        <td>{{ a['account_num'] }}</td>
+        <td>{{ a['card_num'] }}</td>
+        <td>{{ a['type'] }}</td>
+        <td>{{ a['credit_balance']}}</td>
+        <td>
+          <form action="http://localhost:5000/user/transaction" method="post">
+            <button type="submit" name="card_num" value="{{ a['card_num'] }}">go</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Welcome Administrator {{ user_name }}</h1>
+    <form action="http://localhost:5000/admin/transactions" method="get">
+      <button type="submit" name="button">All Transactions</button>
+    </form>
+    <form action="http://localhost:5000/admin/application" method="get">
+      <button type="submit" name="button">Application</button>
+    </form>
+    <form action="http://localhost:5000/admin/m_history" method="get">
+      <button type="submit" name="button">Maintain History</button>
+    </form>
+    <form action="http://localhost:5000/admin/logout" method="get">
+      <button type="submit" name="button">logout</button>
+    </form>
+  </body>
+</html>

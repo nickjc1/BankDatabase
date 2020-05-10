@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome Administrator {{ user_name }}</h1>
+    <h2>Below is the transactions of all users:</h2>
+    <table>
+      <tr>
+        <td>Card Num</td>
+        <td>Amount</td>
+        <td>Time</td>
+        <td>Receive Card Number</td>
+      </tr>
+      {% for t in transactions %}
+      <tr>
+        <td>{{ t.card_num}}</td>
+        <td>{{ t.amount }}</td>
+        <td>{{ t.time }}</td>
+        <td>{{ t.receive_card_num }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+  </body>
+</html>

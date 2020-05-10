@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome {{ user_info.name }}</h1>
+      {% if message %}
+      <p><strong>{{ message }}</strong>
+      {% endif %}
+    <p>Please update your information below:</p>
+    <form action="http://localhost:5000/user/info" method="post">
+      Name: <input type="text" name="name" value="{{ user_info.name }}"><br>
+      SSN: <input type="text" name="ssn" value="{{ user_info.ssn }}"><br>
+      Date of Birth: <input type="date" name="dob"><br>
+      Sex: <input type="radio" name="sex" value="Male">Male</input><input type="radio" name="sex" value="Female">Female</input><br>
+      Phone: <input type="text" name="phone" value="{{ user_info.phone }}"><br>
+      Address: <input type="text" name="address" value="{{ user_info.address }}"><br>
+      Email: <input type="text" name="email" value="{{ user_info.email }}"><br>
+      <input type="submit" name="update" value="submit">
+    </form>
+
+  </body>
+</html>
